@@ -3,209 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>কাকলি এন্টারপ্রাইজ | ডিজিটাল ও আইনি পরিষেবা কেন্দ্র</title>
+    <title>কাকলি এন্টারপ্রাইজ |  আইনি পরিষেবা কেন্দ্র</title>
     
-    <meta name="description" content="কাকলি এন্টারপ্রাইজ - হাজারপুর মোড়, মুর্শিদাবাদ। ডিজিটাল সার্ভিস ও আইনি পরামর্শের নির্ভরযোগ্য প্রতিষ্ঠান।">
-    <meta name="keywords" content="Kakali Enterprise, Hazarpur More, Murshidabad, Digital Service, Lawclark, Online Payment">
-
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-color: #003366;
-            --secondary-color: #27ae60;
-            --bg-light: #f8fafc;
+            --bb-blue: #0056b3; /* বাংলারভূমি নীল */
+            --bb-dark: #003366;
+            --bb-light: #eef5ff;
+            --csc-orange: #ff9933;
+            --white: #ffffff;
         }
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-light);
-            color: #333;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
+
+        body { background-color: #f4f7f9; color: #333; line-height: 1.6; }
+
+        /* টপ গভর্মেন্ট স্ট্রিপ */
+        .gov-strip {
+            background: linear-gradient(to right, #204b9b, #ffffff, #ff9933);
+            height: 8px;
+            width: 100%;
         }
 
-        /* হেডার ও ৭ রঙের রেনবো টেক্সট */
         header {
-            background: #ffffff;
-            padding: 15px 0;
-            text-align: center;
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid var(--bb-blue);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            flex-wrap: wrap;
         }
 
-        .logo-img { max-width: 180px; height: auto; margin-bottom: 5px; }
+        /* প্রফেশনাল ডিজিটাল লোগো ডিজাইন */
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-        .rainbow-text {
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            font-weight: bold;
-            margin: 10px 0;
-            background: linear-gradient(to right, 
-                #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+        .logo-shield {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--bb-blue), var(--bb-dark));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--csc-orange);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .logo-shield::after {
+            content: "KE";
+            color: white;
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .logo-circle-anim {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px dashed var(--bb-blue);
+            border-radius: 20px;
+            animation: rotate-logo 15s linear infinite;
+        }
+
+        @keyframes rotate-logo {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ৭ রঙের স্টাইলিশ রেনবো নাম */
+        .rainbow-title {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 800;
+            background: linear-gradient(to right, #8b00ff, #0000ff, #00ffff, #00ff00, #ffff00, #ff7f00, #ff0000);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: rainbow-animation 4s linear infinite;
-            background-size: 400% 100%;
+            background-size: 200% auto;
+            animation: rainbow-shift 4s linear infinite;
         }
 
-        @keyframes rainbow-animation {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+        @keyframes rainbow-shift {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
         }
 
-        /* ব্যানার সেকশন */
-        .hero { width: 100%; overflow: hidden; background: #000; line-height: 0; }
-        .hero img { width: 100%; height: auto; max-height: 500px; object-fit: cover; }
+        .sub-tag { color: var(--csc-orange); font-weight: bold; font-size: 1rem; display: block; margin-top: -5px; }
 
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        /* ব্যানার */
+        .hero { width: 100%; border-bottom: 5px solid var(--csc-orange); }
+        .hero img { width: 100%; height: auto; max-height: 400px; object-fit: cover; display: block; }
 
-        .trust-bar {
-            background: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            border-radius: 12px;
+        .container { max-width: 1200px; margin: 25px auto; padding: 0 15px; }
+
+        /* স্লাইডিং বিজ্ঞপ্তি (CSS Animation) */
+        .notice-bar {
+            background: #fff;
+            border: 1px solid var(--bb-blue);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
             margin-bottom: 30px;
-            font-weight: bold;
-            font-size: 1.2rem;
+            border-radius: 4px;
         }
 
-        /* সার্ভিস কার্ড */
+        .notice-label { background: #e74c3c; color: white; padding: 10px 15px; font-weight: bold; z-index: 2; }
+
+        .notice-text {
+            flex: 1;
+            white-space: nowrap;
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-notice 25s linear infinite;
+            font-weight: 600;
+            color: var(--bb-blue);
+            font-size: 1.1rem;
+        }
+
+        @keyframes scroll-notice {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* সার্ভিস কার্ড গ্রিড */
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
         }
 
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--primary-color);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
             transition: 0.3s;
         }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
 
-        .card:hover { transform: translateY(-10px); }
-
-        .highlight-card { border-top: 5px solid var(--secondary-color); background: #f0fff4; }
-
-        ul { list-style: none; padding: 0; }
-        ul li { padding: 10px 0; border-bottom: 1px dashed #eee; display: flex; align-items: center; }
-        ul li::before { content: "✓ "; color: var(--secondary-color); margin-right: 10px; font-weight: bold; }
-
-        /* যোগাযোগ ও ইমেল */
-        .contact-info {
-            background: white;
-            padding: 50px;
-            border-radius: 20px;
+        .card-header {
+            background: var(--bb-blue);
+            color: white;
+            padding: 15px;
+            font-size: 1.25rem;
             text-align: center;
-            margin-top: 60px;
-            border: 2px solid var(--primary-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            font-weight: bold;
         }
 
-        .email-box {
-            background: #f1f2f6;
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            text-align: left;
-            margin: 25px 0;
-            border-left: 6px solid #c0392b;
+        .card-body { padding: 20px; }
+        .card-body ul { list-style: none; }
+        .card-body ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
         }
+        .card-body ul li::before { content: "✔"; color: #27ae60; margin-right: 12px; font-weight: bold; }
+
+        /* কন্টাক্ট সেকশন */
+        .contact-panel {
+            background: white;
+            margin-top: 40px;
+            border: 1px solid #ddd;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .contact-left { padding: 40px; border-right: 1px solid #ddd; }
+        .contact-left h2 { color: var(--bb-blue); margin-bottom: 15px; border-bottom: 3px solid var(--csc-orange); display: inline-block; }
+        
+        .contact-right { padding: 40px; background: var(--bb-light); }
+        .email-item { margin-bottom: 10px; font-weight: 600; color: #444; border-bottom: 1px dashed #bbb; padding-bottom: 5px; }
 
         .whatsapp-btn {
-            background: var(--secondary-color);
+            background: #25d366;
             color: white;
-            padding: 18px 45px;
+            padding: 15px 30px;
             text-decoration: none;
-            border-radius: 50px;
             font-weight: bold;
-            font-size: 1.2rem;
             display: inline-block;
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+            margin-top: 15px;
+            border-radius: 4px;
         }
 
-        footer { background: var(--primary-color); color: white; text-align: center; padding: 40px; margin-top: 80px; }
+        footer {
+            background: var(--bb-dark);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; gap: 15px; }
+            .contact-panel { grid-template-columns: 1fr; }
+            .contact-left { border-right: none; border-bottom: 1px solid #ddd; }
+        }
     </style>
 </head>
 <body>
 
+<div class="gov-strip"></div>
+
 <header>
-    <img src="logo.png" alt="লোগো" class="logo-img">
-    <h1 class="rainbow-text">কাকলি এন্টারপ্রাইজ</h1>
+    <div class="logo-box">
+        <div class="logo-shield">
+            <div class="logo-circle-anim"></div>
+        </div>
+        <div class="branding">
+            <h1 class="rainbow-title">কাকলি এন্টারপ্রাইজ</h1>
+            <span class="sub-tag">COMMON SERVICE CENTRE (CSC) |  ল'ক্লার্ক</span>
+        </div>
+    </div>
+    <div class="header-right">
+        <p>সহায়তা কেন্দ্র: <strong style="color: var(--bb-blue);">7908303114</strong></p>
+    </div>
 </header>
 
 <div class="hero">
-    <img src="banner.jpg" alt="ব্যানার">
+    <img src="banner.jpg" alt="Digital Service Center">
 </div>
 
 <div class="container">
-    <div class="trust-bar">🛡️ হাজারপুর মোড়ের সবথেকে নির্ভরযোগ্য ডিজিটাল ও আইনি পরিষেবা কেন্দ্র</div>
-
-    <div class="service-grid">
-        <div class="card highlight-card">
-            <h3>💳 পেমেন্ট ও রিসিট</h3>
-            <ul>
-                <li>অনলাইন পেমেন্ট গ্রহণ করা হয়</li>
-                <li>ইলেকট্রিক ও LIC প্রিমিয়াম জমা</li>
-                <li><strong>কম্পিউটার জেনারেটেড রিসিট</strong></li>
-                <li>যেকোনো ব্যাঙ্কে টাকা ট্রান্সফার</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>📸 ফটো ও পরিচয়পত্র</h3>
-            <ul>
-                <li>তাত্ক্ষণিক পাসপোর্ট সাইজ ফটো</li>
-                <li>প্যান, ভোটার ও রেশন কার্ড</li>
-                <li>আধার অ্যাপয়েন্টমেন্ট ও সংশোধন</li>
-                <li>জেরক্স ও কালার প্রিন্টিং</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>⚖️ জমি ও আইনি কাজ</h3>
-            <ul>
-                <li>অনলাইন মিউটেশন ও পর্চা</li>
-                <li>ট্রেড লাইসেন্স ও উদ্যম রেজিস্ট্রেশন</li>
-                <li>এফিডেভিট ও লোন আবেদন</li>
-                <li>যেকোনো কেস ফাইলিং</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>🎟️ টিকেট ও বিমা</h3>
-            <ul>
-                <li>ট্রেন, প্লেন ও হাসপাতাল টিকেট</li>
-                <li>গাড়ির ও জীবন বিমা (Insurance)</li>
-                <li>পাসপোর্ট ও অনলাইন ফর্ম ফিলাপ</li>
-                <li>ITR রিটার্ন ফাইল জমা</li>
-            </ul>
+    <div class="notice-bar">
+        <div class="notice-label">বিজ্ঞপ্তি</div>
+        <div class="notice-text">
+            📢 আমাদের এখানে অনলাইনের সমস্ত কাজ, জমির মিউটেশন, পর্চা, প্যান কার্ড, ভোটার কার্ড সংশোধন এবং সমস্ত সরকারি প্রকল্পের ফর্ম ফিলাপ নিখুঁতভাবে করা হয়। যোগাযোগ: 7908303114
         </div>
     </div>
 
-    <div class="contact-info">
-        <h2>আমাদের সাথে যোগাযোগ করুন</h2>
-        <p><strong>ঠিকানা:</strong> হাজারপুর মোড়, পোঃ- হাজারপুর, থা- কান্দি, জেলা- মুর্শিদাবাদ</p>
-        <p><strong>মোবাইল / হোয়াটসঅ্যাপ:</strong> 7908303114</p>
-        
-        <div class="email-box">
-            <strong style="color: #c0392b;">📧 আমাদের ইমেল আইডি সমূহ:</strong><br><br>
-            1. kakalienterprise21@gmail.com<br>
-            2. kakalient@rediffmail.com<br>
-            3. lawclark@myyahoo.com
+    <div class="service-grid">
+        <div class="card" style="border-top: 6px solid #e74c3c;">
+            <div class="card-header">🖥️ অনলাইনের সমস্ত কাজ</div>
+            <div class="card-body">
+                <ul>
+                    <li>যেকোনো সরকারি চাকরির ফর্ম ফিলাপ</li>
+                    <li>স্কলারশিপ ফর্ম ফিলাপ</li>
+                    <li>ট্রেন, প্লেন ও হাসপাতালের টিকেট বুকিং</li>
+                    <li>পাসপোর্ট ফর্ম ফিলাপ ও অনলাইন ড্রাইভিং লাইসেন্স ফর্ম ফিলাপ</li>
+                    <li><strong>ডিজিটাল রিসিট প্রদান করা হয়</strong></li>
+                </ul>
+            </div>
         </div>
 
-        <br>
-        <a href="https://wa.me/917908303114" class="whatsapp-btn">সরাসরি হোয়াটসঅ্যাপ করুন</a>
+        <div class="card" style="border-top: 6px solid var(--bb-blue);">
+            <div class="card-header">⚖️ ভূমি ও আইনি দপ্তর</div>
+            <div class="card-body">
+                <ul>
+                    <li>অনলাইন মিউটেশন ও পর্চা (ROR)</li>
+                    <li>জমির রেকর্ড  ও ম্যাপ অনুসন্ধান</li>
+                    <li>ট্রেড লাইসেন্স ও উদ্যম রেজিস্ট্রেশন</li>
+                    <li>এফিডেভিট ও আইনি পরামর্শ (Law Clerk)</li>
+                    <li>যেকোনো আইনি কেস ফাইলিং</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" style="border-top: 6px solid #27ae60;">
+            <div class="card-header">💳 কার্ড ও ব্যাংকিং পরিষেবা</div>
+            <div class="card-body">
+                <ul>
+                    <li>প্যান কার্ড নতুন, সংশোধন</li>
+                    <li>ভোটার ও রেশন কার্ড নতুন, সংশোধন</li>
+                    <li>আধার পেমেন্ট</li>
+                    <li>ITR রিটার্ন ফাইল ও ইনকাম ট্যাক্স</li>
+                    <li>LIC প্রিমিয়াম ও ইলেকট্রিক বিল জমা</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-panel">
+        <div class="contact-left">
+            <h2>সরাসরি যোগাযোগ</h2>
+            <p>📍 <strong>ঠিকানা:</strong> হাজারপুর মোড়, পোঃ- হাজারপুর, থানা- কান্দি, জেলা- মুর্শিদাবাদ,  রাজ্য-পশ্চিমবঙ্গ</p>
+            <p>📞 <strong>মোবাইল:</strong> 7908303114</p>
+            <a href="https://wa.me/917908303114" class="whatsapp-btn">হোয়াটসঅ্যাপ মেসেজ করুন</a>
+        </div>
+        <div class="contact-right">
+            <h4 style="color: var(--bb-blue); margin-bottom: 10px;">📧 অফিসিয়াল ইমেল সমূহ:</h4>
+            <div class="email-item">1. kakalienterprise21@gmail.com</div>
+            <div class="email-item">2. kakalient@rediffmail.com</div>
+            <div class="email-item">3. lawclark@myyahoo.com</div>
+        </div>
     </div>
 </div>
 
 <footer>
-    <p>&copy; ২০২৬ কাকলি এন্টারপ্রাইজ | প্রোপ্রাইটর: ডিজিটাল ল'ক্লার্ক সার্ভিস</p>
-    <p style="font-size: 0.9rem; opacity: 0.8;">সঠিক সময়ে সঠিক পরিষেবাই আমাদের অঙ্গীকার</p>
+    <p>&copy; ২০২৬ কাকলি এন্টারপ্রাইজ | প্রোপ্রাইটর: আজিমুল হোসেন ( ল'ক্লার্ক)</p>
+    <p style="opacity: 0.7; font-size: 0.85rem; margin-top: 10px;">সঠিক সময়ে সঠিক পরিষেবাই আমাদের অঙ্গীকার।</p>
 </footer>
 
 </body>
